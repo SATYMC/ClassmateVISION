@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="ClassMate Vision — a smart classroom ecosystem designed to improve education by turning classroom knowledge into accessible learning resources." />
+  <meta name="theme-color" content="#0f1724">
+  <title>ClassMate Vision | Young Innovators Programme</title>
+
+  <!-- Google Fonts (free) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Fav icon (simple data URI) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230b1220%22 /><text x=%2250%22 y=%2256%22 font-family=%22Rajdhani%2Csans-serif%22 font-size=%2250%22 fill=%22%23a7f3d0%22 text-anchor=%22middle%22>CV</text></svg>">
+</head>
+<body>
+  <!-- Animated background gradient + particle canvas -->
+  <div class="bg-animated"></div>
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- Top navigation -->
+  <header class="topbar">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 48 48" width="36" height="36" aria-hidden="true">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1">
+            <stop offset="0" stop-color="#8b5cf6"/>
+            <stop offset="1" stop-color="#06b6d4"/>
+          </linearGradient>
+        </defs>
+        <rect x="4" y="6" width="40" height="36" rx="6" fill="url(#g1)"></rect>
+        <path d="M12 20h24v4H12zM12 28h16v4H12z" fill="#0b1220" opacity="0.16"></path>
+      </svg>
+      <div class="brand-text">
+        <div class="title">ClassMate Vision</div>
+        <div class="subtitle">Young Innovators Programme</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#problem">Problem</a>
+      <a href="#vision">Our Vision</a>
+      <a href="#how">How it Works</a>
+      <a href="#future">Future</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section id="hero" class="hero section">
+      <div class="hero-inner glass">
+        <div class="hero-left">
+          <h1>Reimagining Education Through Intelligent Technology</h1>
+          <p class="lead">
+            Building a future where every student can understand, revisit, and improve their learning journey.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="#how">Explore How it Works</a>
+            <a class="btn ghost" href="#privacy">Privacy & Ethics</a>
+          </div>
+          <ul class="hero-features">
+            <li><strong>AI-powered assistance</strong> tuned for classroom learning</li>
+            <li><strong>Secure lesson storage</strong> for review and revision</li>
+            <li><strong>Teacher-first design</strong> — supports teaching, not replaces it</li>
+          </ul>
+        </div>
+
+        <!-- Futuristic classroom visual (inline SVG) -->
+        <div class="hero-right">
+          <div class="device-wrap">
+            <!-- subtle animated SVG representing classroom device + AI -->
+            <svg viewBox="0 0 560 420" class="classroom-svg" role="img" aria-label="Futuristic classroom device illustration">
+              <defs>
+                <linearGradient id="lgA" x1="0" x2="1">
+                  <stop offset="0" stop-color="#7c3aed"/>
+                  <stop offset="1" stop-color="#06b6d4"/>
+                </linearGradient>
+              </defs>
+              <rect x="20" y="40" rx="20" width="520" height="320" fill="rgba(255,255,255,0.04)"></rect>
+              <g class="screen" transform="translate(40,60)">
+                <rect width="480" height="240" rx="16" fill="rgba(10,12,20,0.5)" stroke="url(#lgA)" stroke-width="2" />
+                <!-- waveform / transcript lines -->
+                <g class="wave" transform="translate(24,28)">
+                  <rect x="0" y="0" width="380" height="8" rx="4" fill="#0ea5a4" opacity="0.08"></rect>
+                  <rect x="0" y="20" width="320" height="8" rx="4" fill="#60a5fa" opacity="0.06"></rect>
+                  <rect x="0" y="40" width="420" height="8" rx="4" fill="#a78bfa" opacity="0.05"></rect>
+                </g>
+                <!-- teacher mic icon -->
+                <g transform="translate(420,36)" class="mic">
+                  <rect x="0" y="0" width="40" height="60" rx="8" fill="url(#lgA)"></rect>
+                  <rect x="14" y="42" width="12" height="18" rx="6" fill="#07112a"></rect>
+                </g>
+              </g>
+
+              <!-- AI core sphere -->
+              <g transform="translate(240,330)" class="ai-core">
+                <circle cx="0" cy="0" r="36" fill="url(#lgA)" opacity="0.96"></circle>
+                <circle cx="0" cy="0" r="18" fill="#07112a"></circle>
+                <g class="rays" stroke="#9be7ff" stroke-opacity="0.28" stroke-width="2">
+                  <line x1="-56" y1="0" x2="-24" y2="0"></line>
+                  <line x1="56" y1="0" x2="24" y2="0"></line>
+                  <line x1="0" y1="-56" x2="0" y2="-24"></line>
+                  <line x1="20" y1="-44" x2="10" y2="-20"></line>
+                </g>
+              </g>
+            </svg>
+            <div class="device-caption">Secure classroom capture + AI knowledge synthesis</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE PROBLEM -->
+    <section id="problem" class="section">
+      <div class="container glass-section">
+        <h2>The Problem</h2>
+        <p class="muted">Classrooms are full of potential — but not all students benefit equally from live explanations.</p>
+        <div class="problem-grid">
+          <article class="problem-card">
+            <h3>Different learning speeds</h3>
+            <p>Students absorb material at varying paces; one-size-fits-all pacing leaves many behind.</p>
+          </article>
+          <article class="problem-card">
+            <h3>Lessons move too fast</h3>
+            <p>When teachers progress quickly, knowledge gaps emerge that are hard to repair.</p>
+          </article>
+          <article class="problem-card">
+            <h3>Limited review</h3>
+            <p>Key classroom explanations are often ephemeral—students cannot always revisit them later.</p>
+          </article>
+          <article class="problem-card">
+            <h3>Insufficient support</h3>
+            <p>Teachers and students need tools that amplify learning without adding burdens.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR VISION -->
+    <section id="vision" class="section">
+      <div class="container">
+        <h2>Our Vision</h2>
+        <p class="muted">ClassMate Vision transforms classroom interactions into a secure, teacher-guided learning ecosystem.</p>
+
+        <!-- Vision flow diagram -->
+        <div class="vision-flow glass">
+          <div class="node">
+            <div class="icon">🎙️</div>
+            <h4>Teacher microphone</h4>
+            <p>High-quality capture of classroom explanations and questions.</p>
+          </div>
+          <div class="arrow">→</div>
+          <div class="node">
+            <div class="icon">🖥️</div>
+            <h4>Classroom device</h4>
+            <p>Edge device securely records and buffers lessons for processing.</p>
+          </div>
+          <div class="arrow">→</div>
+          <div class="node">
+            <div class="icon">🤖</div>
+            <h4>AI processing</h4>
+            <p>Transcription, segmentation and knowledge organisation tailored to curricula.</p>
+          </div>
+          <div class="arrow">→</div>
+          <div class="node">
+            <div class="icon">🎓</div>
+            <h4>Student learning support</h4>
+            <p>Searchable, reviewable resources and personalized revision aids.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS (animated timeline) -->
+    <section id="how" class="section">
+      <div class="container">
+        <h2>How It Works</h2>
+        <p class="muted">A simple, transparent flow that centers classroom teaching.</p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="marker">1</div>
+            <div class="content">
+              <h3>Teacher teaches</h3>
+              <p>Lessons take place as normal. The system stays in the background and listens with teacher consent.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="marker">2</div>
+            <div class="content">
+              <h3>System captures lesson</h3>
+              <p>Secure recording on the classroom device; minimal network usage and encrypted storage.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="marker">3</div>
+            <div class="content">
+              <h3>AI organizes knowledge</h3>
+              <p>Transcription, topic segmentation, and tagging produce structured lesson records teachers can review.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="marker">4</div>
+            <div class="content">
+              <h3>Students revise and learn</h3>
+              <p>Students access searchable lesson segments, practice prompts, and teacher-approved summaries.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section id="benefits" class="section">
+      <div class="container glass-section">
+        <h2>Benefits</h2>
+        <p class="muted">Designed to be educationally impactful, ethical, and practical.</p>
+        <div class="benefits-grid">
+          <article class="benefit-card glass">
+            <div class="icon">🔎</div>
+            <h4>Better understanding</h4>
+            <p>Students can pinpoint explanations and replay the moments that clarified concepts.</p>
+          </article>
+          <article class="benefit-card glass">
+            <div class="icon">📚</div>
+            <h4>Easier revision</h4>
+            <p>Organized lesson segments and concise summaries make revision efficient and targeted.</p>
+          </article>
+          <article class="benefit-card glass">
+            <div class="icon">⚖️</div>
+            <h4>Equal opportunities</h4>
+            <p>Resources help close gaps for students who need more time or different formats to learn.</p>
+          </article>
+          <article class="benefit-card glass">
+            <div class="icon">⏱️</div>
+            <h4>Supports different speeds</h4>
+            <p>Adaptive review paths let students learn at their own pace without disrupting class.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIVACY & ETHICS -->
+    <section id="privacy" class="section">
+      <div class="container">
+        <h2>Privacy & Ethics</h2>
+        <p class="muted">We prioritize safety, consent, and fairness in every design decision.</p>
+        <div class="policy-grid glass-section">
+          <div class="policy">
+            <h4>Student privacy protection</h4>
+            <p>All recordings are encrypted in transit and at rest; access is restricted to authorized users only.</p>
+          </div>
+          <div class="policy">
+            <h4>Responsible access</h4>
+            <p>Teachers control what is stored and shared. Administrators cannot access content without policies and consent.</p>
+          </div>
+          <div class="policy">
+            <h4>Fair use of classroom data</h4>
+            <p>Data is used only to support learning outcomes — not for profiling or commercial targeting.</p>
+          </div>
+          <div class="policy">
+            <h4>Protecting teachers & students</h4>
+            <p>Audit logs, opt-in capture, and teacher review workflows guard against misuse or misunderstandings.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUTURE VISION -->
+    <section id="future" class="section">
+      <div class="container glass-section">
+        <h2>Future Vision</h2>
+        <p class="muted">A staged path from prototype to wide-scale impact.</p>
+
+        <ol class="future-timeline">
+          <li><strong>Prototype:</strong> Pilot classrooms, iterate with teachers and students.</li>
+          <li><strong>Smart classrooms:</strong> Integration with school infrastructure and curricula.</li>
+          <li><strong>Global education improvement:</strong> Share best practices, improve outcomes at scale.</li>
+        </ol>
+
+        <div class="future-cta">
+          <a class="btn primary" href="#hero">Back to start</a>
+          <a class="btn ghost" href="#privacy">Read privacy</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>ClassMate Vision | Young Innovators Programme</div>
+      <div class="credits muted">Prepared for YIP judges • Not a commercial offering • © <span id="year"></span></div>
+    </div>
+  </footer>
+
+  <!-- Main script -->
+  <script src="script.js"></script>
+</body>
+</html>

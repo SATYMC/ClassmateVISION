@@ -1,0 +1,168 @@
+/* styles.css
+   Clean, futuristic styles with glassmorphism and responsive layout.
+   Comments document important sections and design choices.
+*/
+
+/* ---------- Base & typography ---------- */
+:root{
+  --bg-1: #07112a; /* deep navy */
+  --bg-2: #071a2f;
+  --glass: rgba(255,255,255,0.06);
+  --glass-strong: rgba(255,255,255,0.08);
+  --accent-a: #7c3aed; /* purple */
+  --accent-b: #06b6d4; /* teal */
+  --muted: rgba(255,255,255,0.6);
+  --card-radius: 14px;
+  --glass-border: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(0,0,0,0.06));
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+  color: #e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  overflow-x:hidden;
+}
+
+/* ---------- Animated background gradient ---------- */
+.bg-animated{
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background: radial-gradient(600px 400px at 10% 10%, rgba(124,58,237,0.12), transparent 8%),
+              radial-gradient(500px 300px at 90% 90%, rgba(6,182,212,0.08), transparent 12%);
+  pointer-events:none;
+  animation: bgFloat 12s ease-in-out infinite;
+  mix-blend-mode:screen;
+  filter: blur(18px);
+}
+@keyframes bgFloat{
+  0%{transform:translateY(0px) rotate(0deg)}
+  50%{transform:translateY(-20px) rotate(2deg)}
+  100%{transform:translateY(0px) rotate(0deg)}
+}
+
+/* ---------- Topbar ---------- */
+.topbar{
+  position:sticky;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 28px;
+  backdrop-filter: blur(8px) saturate(120%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  z-index:20;
+}
+.brand{display:flex;gap:12px;align-items:center}
+.brand-text .title{font-family:"Rajdhani",sans-serif;font-weight:600}
+.brand-text .subtitle{font-size:12px;color:var(--muted);margin-top:-2px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600;font-size:14px}
+.nav a:hover{color:#fff}
+
+/* ---------- Sections ---------- */
+.section{padding:64px 20px}
+.container{max-width:1100px;margin:0 auto}
+h1,h2{font-family:"Rajdhani",sans-serif;color:#e9f8ff;margin:0 0 12px}
+h1{font-size:32px;line-height:1.05}
+h2{font-size:24px}
+.lead{color:var(--muted);font-size:18px;margin:12px 0 20px}
+.muted{color:var(--muted);margin-bottom:18px}
+
+/* ---------- Glass cards & helper ---------- */
+.glass{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));
+  border-radius: var(--card-radius);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding:20px;
+  box-shadow: 0 8px 30px rgba(7,17,34,0.55);
+}
+.glass-section{padding:28px;border-radius:18px}
+
+/* ---------- Hero ---------- */
+#hero{padding-top:48px;padding-bottom:48px}
+.hero-inner{display:flex;gap:28px;align-items:center;justify-content:space-between; padding:28px;flex-wrap:wrap}
+.hero-left{flex:1;min-width:280px}
+.hero-right{flex:0 0 420px;display:flex;justify-content:center}
+.hero .lead{max-width:46ch}
+.cta-row{display:flex;gap:12px;margin-top:18px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;font-weight:700;text-decoration:none;
+  transition:transform .16s ease, box-shadow .16s ease;
+}
+.btn.primary{
+  background: linear-gradient(90deg,var(--accent-a),var(--accent-b));
+  color:#071122;
+  box-shadow: 0 8px 30px rgba(6,182,212,0.08), inset 0 -2px 6px rgba(0,0,0,0.12);
+}
+.btn.ghost{
+  background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)
+}
+.btn:hover{transform:translateY(-3px)}
+
+/* hero features list */
+.hero-features{display:flex;gap:12px;list-style:none;padding:0;margin:18px 0 0;flex-wrap:wrap}
+.hero-features li{background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:10px;font-size:13px;color:var(--muted)}
+
+/* classroom SVG container */
+.device-wrap{display:flex;flex-direction:column;align-items:center}
+.classroom-svg{width:100%;max-width:420px;filter:drop-shadow(0 10px 30px rgba(3,7,16,0.6));}
+.device-caption{color:var(--muted);font-size:13px;margin-top:12px}
+
+/* ---------- Problem grid ---------- */
+.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+.problem-card{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+
+/* ---------- Vision flow ---------- */
+.vision-flow{display:flex;align-items:center;justify-content:space-between;padding:18px;margin-top:18px;gap:8px;flex-wrap:wrap}
+.vision-flow .node{width:190px;text-align:center;padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.03)}
+.vision-flow .icon{font-size:24px;margin-bottom:8px}
+.vision-flow .arrow{font-size:28px;color:rgba(255,255,255,0.12)}
+
+/* ---------- Timeline ---------- */
+.timeline{margin-top:20px;display:flex;flex-direction:column;gap:16px}
+.timeline-item{display:flex;gap:16px;align-items:flex-start;opacity:0;transform:translateY(18px);transition:all .6s cubic-bezier(.2,.9,.2,1)}
+.timeline-item .marker{min-width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent-a),var(--accent-b));display:flex;align-items:center;justify-content:center;font-weight:700}
+.timeline-item .content{flex:1;background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+
+/* when visible, animate into place */
+.timeline-item.visible{opacity:1;transform:none}
+
+/* ---------- Benefits grid ---------- */
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+.benefit-card{padding:18px;border-radius:12px;text-align:left}
+.benefit-card .icon{font-size:30px;margin-bottom:8px}
+
+/* ---------- Privacy & policy ---------- */
+.policy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:12px}
+.policy{padding:16px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);}
+
+/* ---------- Future vision ---------- */
+.future-timeline{margin-top:14px;padding-left:18px}
+.future-timeline li{margin-bottom:10px}
+
+/* ---------- Footer ---------- */
+.footer{margin-top:48px;padding:18px 20px;border-top:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.credits{font-size:13px}
+
+/* ---------- Responsive ---------- */
+@media (max-width:940px){
+  .hero-right{flex-basis:100%;order:2;margin-top:12px}
+  .hero-left{flex-basis:100%}
+  .vision-flow{flex-direction:column;align-items:center}
+  .vision-flow .arrow{display:none}
+}
+
+/* ---------- Particle canvas sits behind content ---------- */
+#particle-canvas{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:0.55;mix-blend-mode:screen}
+
+/* ---------- Accessibility & small tweaks ---------- */
+a:focus{outline:3px solid rgba(124,58,237,0.18);outline-offset:2px}
